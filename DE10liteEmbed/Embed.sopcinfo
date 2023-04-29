@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="Embed" kind="Embed" version="1.0" fabric="QSYS">
  <!-- Format version 18.0 614 (Future versions may contain additional information.) -->
- <!-- 2023.04.29.12:39:13 -->
+ <!-- 2023.04.29.15:25:41 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1682739553</value>
+  <value>1682749541</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -15302,7 +15302,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="internalIrqMaskSystemInfo">
    <type>long</type>
-   <value>15</value>
+   <value>31</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -16372,28 +16372,35 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>spi_0</moduleName>
     <slaveName>irq</slaveName>
     <name>spi_0.irq</name>
-    <interruptNumber>0</interruptNumber>
+    <interruptNumber>3</interruptNumber>
    </interrupt>
    <interrupt>
     <isBridge>false</isBridge>
     <moduleName>jtag_uart</moduleName>
     <slaveName>irq</slaveName>
     <name>jtag_uart.irq</name>
-    <interruptNumber>2</interruptNumber>
+    <interruptNumber>1</interruptNumber>
    </interrupt>
    <interrupt>
     <isBridge>false</isBridge>
     <moduleName>slide_pio</moduleName>
     <slaveName>irq</slaveName>
     <name>slide_pio.irq</name>
-    <interruptNumber>3</interruptNumber>
+    <interruptNumber>4</interruptNumber>
+   </interrupt>
+   <interrupt>
+    <isBridge>false</isBridge>
+    <moduleName>timer_0</moduleName>
+    <slaveName>irq</slaveName>
+    <name>timer_0.irq</name>
+    <interruptNumber>0</interruptNumber>
    </interrupt>
    <interrupt>
     <isBridge>false</isBridge>
     <moduleName>modular_adc_0</moduleName>
     <slaveName>sample_store_irq</slaveName>
     <name>modular_adc_0.sample_store_irq</name>
-    <interruptNumber>1</interruptNumber>
+    <interruptNumber>2</interruptNumber>
    </interrupt>
   </interface>
   <interface name="debug_reset_request" kind="reset_source" version="18.0">
@@ -22027,7 +22034,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1682739553</value>
+   <value>1682749541</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -22047,7 +22054,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1682739553</value>
+   <value>1682749541</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -22063,7 +22070,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1682739553</value>
+   <value>1682749541</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -25053,7 +25060,7 @@ parameters are a RESULT of the module parameters. -->
    end="spi_0.irq">
   <parameter name="irqNumber">
    <type>int</type>
-   <value>0</value>
+   <value>3</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -25088,7 +25095,7 @@ parameters are a RESULT of the module parameters. -->
    end="jtag_uart.irq">
   <parameter name="irqNumber">
    <type>int</type>
-   <value>2</value>
+   <value>1</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -25123,7 +25130,7 @@ parameters are a RESULT of the module parameters. -->
    end="slide_pio.irq">
   <parameter name="irqNumber">
    <type>int</type>
-   <value>3</value>
+   <value>4</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -25151,6 +25158,41 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>irq</endConnectionPoint>
  </connection>
  <connection
+   name="nios2_gen2_0.irq/timer_0.irq"
+   kind="interrupt"
+   version="18.0"
+   start="nios2_gen2_0.irq"
+   end="timer_0.irq">
+  <parameter name="irqNumber">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>nios2_gen2_0</startModule>
+  <startConnectionPoint>irq</startConnectionPoint>
+  <endModule>timer_0</endModule>
+  <endConnectionPoint>irq</endConnectionPoint>
+ </connection>
+ <connection
    name="nios2_gen2_0.irq/modular_adc_0.sample_store_irq"
    kind="interrupt"
    version="18.0"
@@ -25158,7 +25200,7 @@ parameters are a RESULT of the module parameters. -->
    end="modular_adc_0.sample_store_irq">
   <parameter name="irqNumber">
    <type>int</type>
-   <value>1</value>
+   <value>2</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -27226,7 +27268,7 @@ parameters are a RESULT of the module parameters. -->
   <version>18.0</version>
  </plugin>
  <plugin>
-  <instanceCount>4</instanceCount>
+  <instanceCount>5</instanceCount>
   <name>interrupt</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IConnection</subtype>

@@ -47,7 +47,6 @@ Info: Embed.modular_adc_0.st_splitter_internal.out1/adc_monitor_internal.adc_dat
 Info: Embed.sdram: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
 Info: Embed.sysid: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
 Info: Embed.sysid: Time stamp will be automatically updated when this component is generated.
-Warning: Embed.timer_0: Interrupt sender timer_0.irq is not connected to an interrupt receiver
 Info: qsys-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
@@ -100,7 +99,6 @@ Info: Embed.modular_adc_0.st_splitter_internal.out1/adc_monitor_internal.adc_dat
 Info: Embed.sdram: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
 Info: Embed.sysid: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
 Info: Embed.sysid: Time stamp will be automatically updated when this component is generated.
-Warning: Embed.timer_0: Interrupt sender timer_0.irq is not connected to an interrupt receiver
 Info: Embed: Generating Embed "Embed" for QUARTUS_SYNTH
 Info: Inserting clock-crossing logic between cmd_demux.src3 and cmd_mux_003.sink0
 Info: Inserting clock-crossing logic between cmd_demux.src4 and cmd_mux_004.sink0
@@ -113,11 +111,11 @@ Info: Inserting clock-crossing logic between rsp_demux_009.src0 and rsp_mux.sink
 Info: altpll_0: "Embed" instantiated altpll "altpll_0"
 Info: altpll_1: "Embed" instantiated altpll "altpll_1"
 Info: jtag_uart: Starting RTL generation for module 'Embed_jtag_uart'
-Info: jtag_uart:   Generation command is [exec C:/intelfpga_lite/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=Embed_jtag_uart --dir=C:/Users/hiphop/AppData/Local/Temp/alt9476_4885947744649310997.dir/0006_jtag_uart_gen/ --quartus_dir=C:/intelfpga_lite/18.0/quartus --verilog --config=C:/Users/hiphop/AppData/Local/Temp/alt9476_4885947744649310997.dir/0006_jtag_uart_gen//Embed_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart:   Generation command is [exec C:/intelfpga_lite/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=Embed_jtag_uart --dir=C:/Users/hiphop/AppData/Local/Temp/alt9476_3894716583454489004.dir/0006_jtag_uart_gen/ --quartus_dir=C:/intelfpga_lite/18.0/quartus --verilog --config=C:/Users/hiphop/AppData/Local/Temp/alt9476_3894716583454489004.dir/0006_jtag_uart_gen//Embed_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
 Info: jtag_uart: Done RTL generation for module 'Embed_jtag_uart'
 Info: jtag_uart: "Embed" instantiated altera_avalon_jtag_uart "jtag_uart"
 Info: led_pio: Starting RTL generation for module 'Embed_led_pio'
-Info: led_pio:   Generation command is [exec C:/intelfpga_lite/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=Embed_led_pio --dir=C:/Users/hiphop/AppData/Local/Temp/alt9476_4885947744649310997.dir/0007_led_pio_gen/ --quartus_dir=C:/intelfpga_lite/18.0/quartus --verilog --config=C:/Users/hiphop/AppData/Local/Temp/alt9476_4885947744649310997.dir/0007_led_pio_gen//Embed_led_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: led_pio:   Generation command is [exec C:/intelfpga_lite/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=Embed_led_pio --dir=C:/Users/hiphop/AppData/Local/Temp/alt9476_3894716583454489004.dir/0007_led_pio_gen/ --quartus_dir=C:/intelfpga_lite/18.0/quartus --verilog --config=C:/Users/hiphop/AppData/Local/Temp/alt9476_3894716583454489004.dir/0007_led_pio_gen//Embed_led_pio_component_configuration.pl  --do_build_sim=0  ]
 Info: led_pio: Done RTL generation for module 'Embed_led_pio'
 Info: led_pio: "Embed" instantiated altera_avalon_pio "led_pio"
 Info: master_0: "Embed" instantiated altera_jtag_avalon_master "master_0"
@@ -136,24 +134,24 @@ Info: nios2_gen2_0: "Embed" instantiated altera_nios2_gen2 "nios2_gen2_0"
 Info: onchip_flash_0: Generating top-level entity altera_onchip_flash
 Info: onchip_flash_0: "Embed" instantiated altera_onchip_flash "onchip_flash_0"
 Info: onchip_ram: Starting RTL generation for module 'Embed_onchip_ram'
-Info: onchip_ram:   Generation command is [exec C:/intelfpga_lite/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=Embed_onchip_ram --dir=C:/Users/hiphop/AppData/Local/Temp/alt9476_4885947744649310997.dir/0010_onchip_ram_gen/ --quartus_dir=C:/intelfpga_lite/18.0/quartus --verilog --config=C:/Users/hiphop/AppData/Local/Temp/alt9476_4885947744649310997.dir/0010_onchip_ram_gen//Embed_onchip_ram_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_ram:   Generation command is [exec C:/intelfpga_lite/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=Embed_onchip_ram --dir=C:/Users/hiphop/AppData/Local/Temp/alt9476_3894716583454489004.dir/0010_onchip_ram_gen/ --quartus_dir=C:/intelfpga_lite/18.0/quartus --verilog --config=C:/Users/hiphop/AppData/Local/Temp/alt9476_3894716583454489004.dir/0010_onchip_ram_gen//Embed_onchip_ram_component_configuration.pl  --do_build_sim=0  ]
 Info: onchip_ram: Done RTL generation for module 'Embed_onchip_ram'
 Info: onchip_ram: "Embed" instantiated altera_avalon_onchip_memory2 "onchip_ram"
 Info: sdram: Starting RTL generation for module 'Embed_sdram'
-Info: sdram:   Generation command is [exec C:/intelfpga_lite/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=Embed_sdram --dir=C:/Users/hiphop/AppData/Local/Temp/alt9476_4885947744649310997.dir/0011_sdram_gen/ --quartus_dir=C:/intelfpga_lite/18.0/quartus --verilog --config=C:/Users/hiphop/AppData/Local/Temp/alt9476_4885947744649310997.dir/0011_sdram_gen//Embed_sdram_component_configuration.pl  --do_build_sim=0  ]
+Info: sdram:   Generation command is [exec C:/intelfpga_lite/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=Embed_sdram --dir=C:/Users/hiphop/AppData/Local/Temp/alt9476_3894716583454489004.dir/0011_sdram_gen/ --quartus_dir=C:/intelfpga_lite/18.0/quartus --verilog --config=C:/Users/hiphop/AppData/Local/Temp/alt9476_3894716583454489004.dir/0011_sdram_gen//Embed_sdram_component_configuration.pl  --do_build_sim=0  ]
 Info: sdram: Done RTL generation for module 'Embed_sdram'
 Info: sdram: "Embed" instantiated altera_avalon_new_sdram_controller "sdram"
 Info: slide_pio: Starting RTL generation for module 'Embed_slide_pio'
-Info: slide_pio:   Generation command is [exec C:/intelfpga_lite/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=Embed_slide_pio --dir=C:/Users/hiphop/AppData/Local/Temp/alt9476_4885947744649310997.dir/0012_slide_pio_gen/ --quartus_dir=C:/intelfpga_lite/18.0/quartus --verilog --config=C:/Users/hiphop/AppData/Local/Temp/alt9476_4885947744649310997.dir/0012_slide_pio_gen//Embed_slide_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: slide_pio:   Generation command is [exec C:/intelfpga_lite/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=Embed_slide_pio --dir=C:/Users/hiphop/AppData/Local/Temp/alt9476_3894716583454489004.dir/0012_slide_pio_gen/ --quartus_dir=C:/intelfpga_lite/18.0/quartus --verilog --config=C:/Users/hiphop/AppData/Local/Temp/alt9476_3894716583454489004.dir/0012_slide_pio_gen//Embed_slide_pio_component_configuration.pl  --do_build_sim=0  ]
 Info: slide_pio: Done RTL generation for module 'Embed_slide_pio'
 Info: slide_pio: "Embed" instantiated altera_avalon_pio "slide_pio"
 Info: spi_0: Starting RTL generation for module 'Embed_spi_0'
-Info: spi_0:   Generation command is [exec C:/intelfpga_lite/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi -- C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi/generate_rtl.pl --name=Embed_spi_0 --dir=C:/Users/hiphop/AppData/Local/Temp/alt9476_4885947744649310997.dir/0013_spi_0_gen/ --quartus_dir=C:/intelfpga_lite/18.0/quartus --verilog --config=C:/Users/hiphop/AppData/Local/Temp/alt9476_4885947744649310997.dir/0013_spi_0_gen//Embed_spi_0_component_configuration.pl  --do_build_sim=0  ]
+Info: spi_0:   Generation command is [exec C:/intelfpga_lite/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi -- C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi/generate_rtl.pl --name=Embed_spi_0 --dir=C:/Users/hiphop/AppData/Local/Temp/alt9476_3894716583454489004.dir/0013_spi_0_gen/ --quartus_dir=C:/intelfpga_lite/18.0/quartus --verilog --config=C:/Users/hiphop/AppData/Local/Temp/alt9476_3894716583454489004.dir/0013_spi_0_gen//Embed_spi_0_component_configuration.pl  --do_build_sim=0  ]
 Info: spi_0: Done RTL generation for module 'Embed_spi_0'
 Info: spi_0: "Embed" instantiated altera_avalon_spi "spi_0"
 Info: sysid: "Embed" instantiated altera_avalon_sysid_qsys "sysid"
 Info: timer_0: Starting RTL generation for module 'Embed_timer_0'
-Info: timer_0:   Generation command is [exec C:/intelFPGA_lite/18.0/quartus/bin64//perl/bin/perl.exe -I C:/intelFPGA_lite/18.0/quartus/bin64//perl/lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=Embed_timer_0 --dir=C:/Users/hiphop/AppData/Local/Temp/alt9476_4885947744649310997.dir/0015_timer_0_gen/ --quartus_dir=C:/intelfpga_lite/18.0/quartus --verilog --config=C:/Users/hiphop/AppData/Local/Temp/alt9476_4885947744649310997.dir/0015_timer_0_gen//Embed_timer_0_component_configuration.pl  --do_build_sim=0  ]
+Info: timer_0:   Generation command is [exec C:/intelFPGA_lite/18.0/quartus/bin64//perl/bin/perl.exe -I C:/intelFPGA_lite/18.0/quartus/bin64//perl/lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=Embed_timer_0 --dir=C:/Users/hiphop/AppData/Local/Temp/alt9476_3894716583454489004.dir/0015_timer_0_gen/ --quartus_dir=C:/intelfpga_lite/18.0/quartus --verilog --config=C:/Users/hiphop/AppData/Local/Temp/alt9476_3894716583454489004.dir/0015_timer_0_gen//Embed_timer_0_component_configuration.pl  --do_build_sim=0  ]
 Info: timer_0: Done RTL generation for module 'Embed_timer_0'
 Info: timer_0: "Embed" instantiated altera_avalon_timer "timer_0"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -194,29 +192,29 @@ Info: st_splitter_internal: "modular_adc_0" instantiated altera_avalon_st_splitt
 Info: avalon_st_adapter: "modular_adc_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: avalon_st_adapter_001: "modular_adc_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_001"
 Info: cpu: Starting RTL generation for module 'Embed_nios2_gen2_0_cpu'
-Info: cpu:   Generation command is [exec C:/intelFPGA_lite/18.0/quartus/bin64//eperlcmd.exe -I C:/intelFPGA_lite/18.0/quartus/bin64//perl/lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.0/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/18.0/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/18.0/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/18.0/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/18.0/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=Embed_nios2_gen2_0_cpu --dir=C:/Users/hiphop/AppData/Local/Temp/alt9476_4885947744649310997.dir/0031_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/18.0/quartus/bin64/ --verilog --config=C:/Users/hiphop/AppData/Local/Temp/alt9476_4885947744649310997.dir/0031_cpu_gen//Embed_nios2_gen2_0_cpu_processor_configuration.pl  --do_build_sim=0  ]
-Info: cpu: # 2023.04.29 12:39:48 (*) Starting Nios II generation
-Info: cpu: # 2023.04.29 12:39:48 (*)   Checking for plaintext license.
-Info: cpu: # 2023.04.29 12:39:49 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/18.0/quartus/bin64/
-Info: cpu: # 2023.04.29 12:39:49 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2023.04.29 12:39:49 (*)   Plaintext license not found.
-Info: cpu: # 2023.04.29 12:39:49 (*)   Checking for encrypted license (non-evaluation).
-Info: cpu: # 2023.04.29 12:39:49 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/18.0/quartus/bin64/
-Info: cpu: # 2023.04.29 12:39:49 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2023.04.29 12:39:49 (*)   Encrypted license not found.  Defaulting to OCP evaluation license (produces a time-limited SOF)
-Info: cpu: # 2023.04.29 12:39:49 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2023.04.29 12:39:49 (*)   Creating all objects for CPU
-Info: cpu: # 2023.04.29 12:39:49 (*)     Testbench
-Info: cpu: # 2023.04.29 12:39:50 (*)     Instruction decoding
-Info: cpu: # 2023.04.29 12:39:50 (*)       Instruction fields
-Info: cpu: # 2023.04.29 12:39:50 (*)       Instruction decodes
-Info: cpu: # 2023.04.29 12:39:50 (*)       Signals for RTL simulation waveforms
-Info: cpu: # 2023.04.29 12:39:50 (*)       Instruction controls
-Info: cpu: # 2023.04.29 12:39:50 (*)     Pipeline frontend
-Info: cpu: # 2023.04.29 12:39:50 (*)     Pipeline backend
-Info: cpu: # 2023.04.29 12:39:52 (*)   Generating RTL from CPU objects
-Info: cpu: # 2023.04.29 12:39:53 (*)   Creating encrypted RTL
-Info: cpu: # 2023.04.29 12:39:54 (*) Done Nios II generation
+Info: cpu:   Generation command is [exec C:/intelFPGA_lite/18.0/quartus/bin64//eperlcmd.exe -I C:/intelFPGA_lite/18.0/quartus/bin64//perl/lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.0/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/18.0/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/18.0/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/18.0/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/18.0/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=Embed_nios2_gen2_0_cpu --dir=C:/Users/hiphop/AppData/Local/Temp/alt9476_3894716583454489004.dir/0031_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/18.0/quartus/bin64/ --verilog --config=C:/Users/hiphop/AppData/Local/Temp/alt9476_3894716583454489004.dir/0031_cpu_gen//Embed_nios2_gen2_0_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2023.04.29 15:26:18 (*) Starting Nios II generation
+Info: cpu: # 2023.04.29 15:26:18 (*)   Checking for plaintext license.
+Info: cpu: # 2023.04.29 15:26:18 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/18.0/quartus/bin64/
+Info: cpu: # 2023.04.29 15:26:18 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2023.04.29 15:26:18 (*)   Plaintext license not found.
+Info: cpu: # 2023.04.29 15:26:18 (*)   Checking for encrypted license (non-evaluation).
+Info: cpu: # 2023.04.29 15:26:19 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/18.0/quartus/bin64/
+Info: cpu: # 2023.04.29 15:26:19 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2023.04.29 15:26:19 (*)   Encrypted license not found.  Defaulting to OCP evaluation license (produces a time-limited SOF)
+Info: cpu: # 2023.04.29 15:26:19 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2023.04.29 15:26:19 (*)   Creating all objects for CPU
+Info: cpu: # 2023.04.29 15:26:19 (*)     Testbench
+Info: cpu: # 2023.04.29 15:26:19 (*)     Instruction decoding
+Info: cpu: # 2023.04.29 15:26:19 (*)       Instruction fields
+Info: cpu: # 2023.04.29 15:26:19 (*)       Instruction decodes
+Info: cpu: # 2023.04.29 15:26:20 (*)       Signals for RTL simulation waveforms
+Info: cpu: # 2023.04.29 15:26:20 (*)       Instruction controls
+Info: cpu: # 2023.04.29 15:26:20 (*)     Pipeline frontend
+Info: cpu: # 2023.04.29 15:26:20 (*)     Pipeline backend
+Info: cpu: # 2023.04.29 15:26:22 (*)   Generating RTL from CPU objects
+Info: cpu: # 2023.04.29 15:26:24 (*)   Creating encrypted RTL
+Info: cpu: # 2023.04.29 15:26:24 (*) Done Nios II generation
 Info: cpu: Done RTL generation for module 'Embed_nios2_gen2_0_cpu'
 Info: cpu: "nios2_gen2_0" instantiated altera_nios2_gen2_unit "cpu"
 Info: nios2_gen2_0_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "nios2_gen2_0_data_master_translator"

@@ -30,8 +30,8 @@ module Embed (
 	);
 
 	wire         altpll_1_c0_clk;                                               // altpll_1:c0 -> modular_adc_0:adc_pll_clock_clk
-	wire         altpll_0_c0_clk;                                               // altpll_0:c0 -> [irq_mapper:clk, irq_synchronizer:sender_clk, irq_synchronizer_001:sender_clk, irq_synchronizer_002:sender_clk, mm_clock_crossing_bridge_0:s0_clk, mm_interconnect_0:altpll_0_c0_clk, nios2_gen2_0:clk, onchip_flash_0:clock, onchip_ram:clk, rst_controller_004:clk, sdram:clk, spi_0:clk]
-	wire         altpll_0_c2_clk;                                               // altpll_0:c2 -> [irq_synchronizer:receiver_clk, irq_synchronizer_001:receiver_clk, jtag_uart:clk, led_pio:clk, mm_clock_crossing_bridge_0:m0_clk, mm_interconnect_1:altpll_0_c2_clk, rst_controller_002:clk, slide_pio:clk, sysid:clock, timer_0:clk]
+	wire         altpll_0_c0_clk;                                               // altpll_0:c0 -> [irq_mapper:clk, irq_synchronizer:sender_clk, irq_synchronizer_001:sender_clk, irq_synchronizer_002:sender_clk, irq_synchronizer_003:sender_clk, mm_clock_crossing_bridge_0:s0_clk, mm_interconnect_0:altpll_0_c0_clk, nios2_gen2_0:clk, onchip_flash_0:clock, onchip_ram:clk, rst_controller_004:clk, sdram:clk, spi_0:clk]
+	wire         altpll_0_c2_clk;                                               // altpll_0:c2 -> [irq_synchronizer:receiver_clk, irq_synchronizer_001:receiver_clk, irq_synchronizer_002:receiver_clk, jtag_uart:clk, led_pio:clk, mm_clock_crossing_bridge_0:m0_clk, mm_interconnect_1:altpll_0_c2_clk, rst_controller_002:clk, slide_pio:clk, sysid:clock, timer_0:clk]
 	wire  [31:0] nios2_gen2_0_data_master_readdata;                             // mm_interconnect_0:nios2_gen2_0_data_master_readdata -> nios2_gen2_0:d_readdata
 	wire         nios2_gen2_0_data_master_waitrequest;                          // mm_interconnect_0:nios2_gen2_0_data_master_waitrequest -> nios2_gen2_0:d_waitrequest
 	wire         nios2_gen2_0_data_master_debugaccess;                          // nios2_gen2_0:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:nios2_gen2_0_data_master_debugaccess
@@ -168,14 +168,16 @@ module Embed (
 	wire         irq_mapper_receiver2_irq;                                      // irq_synchronizer_001:sender_irq -> irq_mapper:receiver2_irq
 	wire   [0:0] irq_synchronizer_001_receiver_irq;                             // slide_pio:irq -> irq_synchronizer_001:receiver_irq
 	wire         irq_mapper_receiver3_irq;                                      // irq_synchronizer_002:sender_irq -> irq_mapper:receiver3_irq
-	wire   [0:0] irq_synchronizer_002_receiver_irq;                             // modular_adc_0:sample_store_irq_irq -> irq_synchronizer_002:receiver_irq
+	wire   [0:0] irq_synchronizer_002_receiver_irq;                             // timer_0:irq -> irq_synchronizer_002:receiver_irq
+	wire         irq_mapper_receiver4_irq;                                      // irq_synchronizer_003:sender_irq -> irq_mapper:receiver4_irq
+	wire   [0:0] irq_synchronizer_003_receiver_irq;                             // modular_adc_0:sample_store_irq_irq -> irq_synchronizer_003:receiver_irq
 	wire         rst_controller_reset_out_reset;                                // rst_controller:reset_out -> [altpll_0:reset, mm_interconnect_0:altpll_0_inclk_interface_reset_reset_bridge_in_reset_reset]
 	wire         nios2_gen2_0_debug_reset_request_reset;                        // nios2_gen2_0:debug_reset_request -> [rst_controller:reset_in2, rst_controller_001:reset_in2, rst_controller_002:reset_in2, rst_controller_003:reset_in2, rst_controller_004:reset_in2]
 	wire         master_0_master_reset_reset;                                   // master_0:master_reset_reset -> [rst_controller:reset_in3, rst_controller_001:reset_in3, rst_controller_002:reset_in3, rst_controller_003:reset_in3, rst_controller_004:reset_in3]
-	wire         rst_controller_001_reset_out_reset;                            // rst_controller_001:reset_out -> [altpll_1:reset, irq_synchronizer_002:receiver_reset, mm_interconnect_0:altpll_1_inclk_interface_reset_reset_bridge_in_reset_reset, mm_interconnect_0:master_0_clk_reset_reset_bridge_in_reset_reset, modular_adc_0:reset_sink_reset_n]
-	wire         rst_controller_002_reset_out_reset;                            // rst_controller_002:reset_out -> [irq_synchronizer:receiver_reset, irq_synchronizer_001:receiver_reset, jtag_uart:rst_n, led_pio:reset_n, mm_clock_crossing_bridge_0:m0_reset, mm_interconnect_1:mm_clock_crossing_bridge_0_m0_reset_reset_bridge_in_reset_reset, slide_pio:reset_n, sysid:reset_n, timer_0:reset_n]
+	wire         rst_controller_001_reset_out_reset;                            // rst_controller_001:reset_out -> [altpll_1:reset, irq_synchronizer_003:receiver_reset, mm_interconnect_0:altpll_1_inclk_interface_reset_reset_bridge_in_reset_reset, mm_interconnect_0:master_0_clk_reset_reset_bridge_in_reset_reset, modular_adc_0:reset_sink_reset_n]
+	wire         rst_controller_002_reset_out_reset;                            // rst_controller_002:reset_out -> [irq_synchronizer:receiver_reset, irq_synchronizer_001:receiver_reset, irq_synchronizer_002:receiver_reset, jtag_uart:rst_n, led_pio:reset_n, mm_clock_crossing_bridge_0:m0_reset, mm_interconnect_1:mm_clock_crossing_bridge_0_m0_reset_reset_bridge_in_reset_reset, slide_pio:reset_n, sysid:reset_n, timer_0:reset_n]
 	wire         rst_controller_003_reset_out_reset;                            // rst_controller_003:reset_out -> master_0:clk_reset_reset
-	wire         rst_controller_004_reset_out_reset;                            // rst_controller_004:reset_out -> [irq_mapper:reset, irq_synchronizer:sender_reset, irq_synchronizer_001:sender_reset, irq_synchronizer_002:sender_reset, mm_clock_crossing_bridge_0:s0_reset, mm_interconnect_0:nios2_gen2_0_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, onchip_flash_0:reset_n, onchip_ram:reset, rst_translator:in_reset, sdram:reset_n, spi_0:reset_n]
+	wire         rst_controller_004_reset_out_reset;                            // rst_controller_004:reset_out -> [irq_mapper:reset, irq_synchronizer:sender_reset, irq_synchronizer_001:sender_reset, irq_synchronizer_002:sender_reset, irq_synchronizer_003:sender_reset, mm_clock_crossing_bridge_0:s0_reset, mm_interconnect_0:nios2_gen2_0_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, onchip_flash_0:reset_n, onchip_ram:reset, rst_translator:in_reset, sdram:reset_n, spi_0:reset_n]
 	wire         rst_controller_004_reset_out_reset_req;                        // rst_controller_004:reset_req -> [nios2_gen2_0:reset_req, onchip_ram:reset_req, rst_translator:reset_req_in]
 
 	Embed_altpll_0 altpll_0 (
@@ -327,7 +329,7 @@ module Embed (
 		.sample_store_csr_write     (mm_interconnect_0_modular_adc_0_sample_store_csr_write),     //                 .write
 		.sample_store_csr_writedata (mm_interconnect_0_modular_adc_0_sample_store_csr_writedata), //                 .writedata
 		.sample_store_csr_readdata  (mm_interconnect_0_modular_adc_0_sample_store_csr_readdata),  //                 .readdata
-		.sample_store_irq_irq       (irq_synchronizer_002_receiver_irq)                           // sample_store_irq.irq
+		.sample_store_irq_irq       (irq_synchronizer_003_receiver_irq)                           // sample_store_irq.irq
 	);
 
 	Embed_nios2_gen2_0 nios2_gen2_0 (
@@ -506,7 +508,7 @@ module Embed (
 		.readdata   (mm_interconnect_1_timer_0_s1_readdata),   //      .readdata
 		.chipselect (mm_interconnect_1_timer_0_s1_chipselect), //      .chipselect
 		.write_n    (~mm_interconnect_1_timer_0_s1_write),     //      .write_n
-		.irq        ()                                         //   irq.irq
+		.irq        (irq_synchronizer_002_receiver_irq)        //   irq.irq
 	);
 
 	Embed_mm_interconnect_0 mm_interconnect_0 (
@@ -660,6 +662,7 @@ module Embed (
 		.receiver1_irq (irq_mapper_receiver1_irq),           // receiver1.irq
 		.receiver2_irq (irq_mapper_receiver2_irq),           // receiver2.irq
 		.receiver3_irq (irq_mapper_receiver3_irq),           // receiver3.irq
+		.receiver4_irq (irq_mapper_receiver4_irq),           // receiver4.irq
 		.sender_irq    (nios2_gen2_0_irq_irq)                //    sender.irq
 	);
 
@@ -688,12 +691,23 @@ module Embed (
 	altera_irq_clock_crosser #(
 		.IRQ_WIDTH (1)
 	) irq_synchronizer_002 (
+		.receiver_clk   (altpll_0_c2_clk),                    //       receiver_clk.clk
+		.sender_clk     (altpll_0_c0_clk),                    //         sender_clk.clk
+		.receiver_reset (rst_controller_002_reset_out_reset), // receiver_clk_reset.reset
+		.sender_reset   (rst_controller_004_reset_out_reset), //   sender_clk_reset.reset
+		.receiver_irq   (irq_synchronizer_002_receiver_irq),  //           receiver.irq
+		.sender_irq     (irq_mapper_receiver3_irq)            //             sender.irq
+	);
+
+	altera_irq_clock_crosser #(
+		.IRQ_WIDTH (1)
+	) irq_synchronizer_003 (
 		.receiver_clk   (clk_0_clk),                          //       receiver_clk.clk
 		.sender_clk     (altpll_0_c0_clk),                    //         sender_clk.clk
 		.receiver_reset (rst_controller_001_reset_out_reset), // receiver_clk_reset.reset
 		.sender_reset   (rst_controller_004_reset_out_reset), //   sender_clk_reset.reset
-		.receiver_irq   (irq_synchronizer_002_receiver_irq),  //           receiver.irq
-		.sender_irq     (irq_mapper_receiver3_irq)            //             sender.irq
+		.receiver_irq   (irq_synchronizer_003_receiver_irq),  //           receiver.irq
+		.sender_irq     (irq_mapper_receiver4_irq)            //             sender.irq
 	);
 
 	altera_reset_controller #(

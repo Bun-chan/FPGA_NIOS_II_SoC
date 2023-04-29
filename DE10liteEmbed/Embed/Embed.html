@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2023.04.29.12:39:13</td>
+    <td class="l">2023.04.29.15:25:41</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -4517,7 +4517,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_altpll_0">altpll_0</a>
       </td>
       <td class="from">c0&#160;&#160;</td>
-      <td class="main" rowspan="88">nios2_gen2_0</td>
+      <td class="main" rowspan="90">nios2_gen2_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
@@ -4901,6 +4901,32 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      <tr>
       <td></td>
       <td></td>
+      <td class="from">irq&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_timer_0">timer_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;irq</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">debug_reset_request&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
       <td class="from">debug_reset_request&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
        <a href="#module_master_0">master_0</a>
@@ -4920,22 +4946,6 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td class="from">debug_reset_request&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
        <a href="#module_led_pio">led_pio</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;reset</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">debug_reset_request&#160;&#160;</td>
-      <td class="neighbor" rowspan="2">
-       <a href="#module_timer_0">timer_0</a>
       </td>
      </tr>
      <tr>
@@ -5710,7 +5720,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">internalIrqMaskSystemInfo</td>
-        <td class="parametervalue">15</td>
+        <td class="parametervalue">31</td>
        </tr>
        <tr>
         <td class="parametername">customInstSlavesSystemInfo</td>
@@ -7530,7 +7540,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">timestamp</td>
-        <td class="parametervalue">1682739553</td>
+        <td class="parametervalue">1682749541</td>
        </tr>
        <tr>
         <td class="parametername">deviceFamily</td>
@@ -7555,7 +7565,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">TIMESTAMP</td>
-        <td class="parametervalue">1682739553</td>
+        <td class="parametervalue">1682749541</td>
        </tr>
       </table>
      </td>
@@ -7574,7 +7584,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_mm_clock_crossing_bridge_0">mm_clock_crossing_bridge_0</a>
       </td>
       <td class="from">m0&#160;&#160;</td>
-      <td class="main" rowspan="17">timer_0</td>
+      <td class="main" rowspan="19">timer_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;s1</td>
@@ -7590,6 +7600,24 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
+      </td>
+      <td class="from">irq&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;irq</td>
+     </tr>
+     <tr>
+      <td class="from">debug_reset_request&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
      </tr>
      <tr style="height:6px">
       <td></td>
@@ -7611,18 +7639,6 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_clk_1">clk_1</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;reset</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td class="neighbor" rowspan="2">
-       <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
-      </td>
-      <td class="from">debug_reset_request&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset</td>
@@ -7788,8 +7804,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </div>
   <table class="blueBar">
    <tr>
-    <td class="l">generation took 0.00 seconds</td>
-    <td class="r">rendering took 0.15 seconds</td>
+    <td class="l">generation took 0.01 seconds</td>
+    <td class="r">rendering took 0.11 seconds</td>
    </tr>
   </table>
  </body>

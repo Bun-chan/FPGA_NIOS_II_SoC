@@ -1,5 +1,5 @@
 Flow report for Embed
-Sat Apr 29 12:46:12 2023
+Sat Apr 29 15:32:34 2023
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sat Apr 29 12:46:00 2023       ;
+; Flow Status                        ; Successful - Sat Apr 29 15:32:22 2023       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; Embed                                       ;
 ; Top-level Entity Name              ; DE10_LITE_Default                           ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C6GES                            ;
 ; Timing Models                      ; Preliminary                                 ;
-; Total logic elements               ; 11,526 / 49,760 ( 23 % )                    ;
-;     Total combinational functions  ; 9,538 / 49,760 ( 19 % )                     ;
-;     Dedicated logic registers      ; 7,307 / 49,760 ( 15 % )                     ;
-; Total registers                    ; 7376                                        ;
+; Total logic elements               ; 11,487 / 49,760 ( 23 % )                    ;
+;     Total combinational functions  ; 9,530 / 49,760 ( 19 % )                     ;
+;     Dedicated logic registers      ; 7,314 / 49,760 ( 15 % )                     ;
+; Total registers                    ; 7383                                        ;
 ; Total pins                         ; 185 / 360 ( 51 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 759,768 / 1,677,312 ( 45 % )                ;
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/29/2023 12:42:45 ;
+; Start date & time ; 04/29/2023 15:29:01 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Embed               ;
 +-------------------+---------------------+
@@ -77,7 +77,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+---------------------------------------------------------+---------------+---------------------+------------+
 ; Assignment Name                     ; Value                                                   ; Default Value ; Entity Name         ; Section Id ;
 +-------------------------------------+---------------------------------------------------------+---------------+---------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 194042949445197.168273976403264                         ; --            ; --                  ; --         ;
+; COMPILER_SIGNATURE_ID               ; 194042949445197.168274974021236                         ; --            ; --                  ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                      ; --            ; --                  ; --         ;
 ; MESSAGE_DISABLE                     ; 332060                                                  ; --            ; altera_onchip_flash ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                       ; --            ; --                  ; --         ;
@@ -97,7 +97,7 @@ refer to the applicable agreement for further details.
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                   ; --            ; --                  ; --         ;
 ; SLD_FILE                            ; Embed/synthesis/Embed.regmap                            ; --            ; --                  ; --         ;
 ; SLD_FILE                            ; Embed/synthesis/Embed.debuginfo                         ; --            ; --                  ; --         ;
-; SLD_INFO                            ; QSYS_NAME Embed HAS_SOPCINFO 1 GENERATION_ID 1682739553 ; --            ; --                  ; --         ;
+; SLD_INFO                            ; QSYS_NAME Embed HAS_SOPCINFO 1 GENERATION_ID 1682749541 ; --            ; --                  ; --         ;
 ; SOPCINFO_FILE                       ; Embed/synthesis/../../Embed.sopcinfo                    ; --            ; --                  ; --         ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                      ; --            ; --                  ; --         ;
 ; TOP_LEVEL_ENTITY                    ; DE10_LITE_Default                                       ; Embed         ; --                  ; --         ;
@@ -109,11 +109,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:49     ; 1.0                     ; 5157 MB             ; 00:02:31                           ;
-; Fitter               ; 00:01:11     ; 1.5                     ; 6124 MB             ; 00:02:13                           ;
-; Assembler            ; 00:00:04     ; 1.0                     ; 4753 MB             ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:11     ; 2.2                     ; 4996 MB             ; 00:00:20                           ;
-; Total                ; 00:03:15     ; --                      ; --                  ; 00:05:08                           ;
+; Analysis & Synthesis ; 00:01:52     ; 1.0                     ; 5187 MB             ; 00:02:34                           ;
+; Fitter               ; 00:01:10     ; 1.4                     ; 6127 MB             ; 00:02:12                           ;
+; Assembler            ; 00:00:05     ; 1.0                     ; 4752 MB             ; 00:00:05                           ;
+; Timing Analyzer      ; 00:00:11     ; 2.1                     ; 4997 MB             ; 00:00:20                           ;
+; Total                ; 00:03:18     ; --                      ; --                  ; 00:05:11                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

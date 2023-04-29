@@ -1,0 +1,9 @@
+15:45:53 **** Incremental Build of configuration Nios II for project Embed_System ****
+make all 
+Info: Building ../Embed_System_bsp/
+C:/intelFPGA_lite/18.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Embed_System_bsp/
+[BSP build complete]
+[Embed_System build complete]
+
+15:45:54 Build Finished (took 866ms)
+
