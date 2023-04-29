@@ -19,13 +19,13 @@ module Embed_mm_interconnect_1 (
 		input  wire        mm_clock_crossing_bridge_0_m0_write,                             //                                                          .write
 		input  wire [31:0] mm_clock_crossing_bridge_0_m0_writedata,                         //                                                          .writedata
 		input  wire        mm_clock_crossing_bridge_0_m0_debugaccess,                       //                                                          .debugaccess
-		output wire [0:0]  jtag_uart_0_avalon_jtag_slave_address,                           //                             jtag_uart_0_avalon_jtag_slave.address
-		output wire        jtag_uart_0_avalon_jtag_slave_write,                             //                                                          .write
-		output wire        jtag_uart_0_avalon_jtag_slave_read,                              //                                                          .read
-		input  wire [31:0] jtag_uart_0_avalon_jtag_slave_readdata,                          //                                                          .readdata
-		output wire [31:0] jtag_uart_0_avalon_jtag_slave_writedata,                         //                                                          .writedata
-		input  wire        jtag_uart_0_avalon_jtag_slave_waitrequest,                       //                                                          .waitrequest
-		output wire        jtag_uart_0_avalon_jtag_slave_chipselect,                        //                                                          .chipselect
+		output wire [0:0]  jtag_uart_avalon_jtag_slave_address,                             //                               jtag_uart_avalon_jtag_slave.address
+		output wire        jtag_uart_avalon_jtag_slave_write,                               //                                                          .write
+		output wire        jtag_uart_avalon_jtag_slave_read,                                //                                                          .read
+		input  wire [31:0] jtag_uart_avalon_jtag_slave_readdata,                            //                                                          .readdata
+		output wire [31:0] jtag_uart_avalon_jtag_slave_writedata,                           //                                                          .writedata
+		input  wire        jtag_uart_avalon_jtag_slave_waitrequest,                         //                                                          .waitrequest
+		output wire        jtag_uart_avalon_jtag_slave_chipselect,                          //                                                          .chipselect
 		output wire [1:0]  led_pio_s1_address,                                              //                                                led_pio_s1.address
 		output wire        led_pio_s1_write,                                                //                                                          .write
 		input  wire [31:0] led_pio_s1_readdata,                                             //                                                          .readdata
@@ -56,33 +56,33 @@ module Embed_mm_interconnect_1 (
 	wire         mm_clock_crossing_bridge_0_m0_translator_avalon_universal_master_0_write;         // mm_clock_crossing_bridge_0_m0_translator:uav_write -> mm_clock_crossing_bridge_0_m0_agent:av_write
 	wire  [31:0] mm_clock_crossing_bridge_0_m0_translator_avalon_universal_master_0_writedata;     // mm_clock_crossing_bridge_0_m0_translator:uav_writedata -> mm_clock_crossing_bridge_0_m0_agent:av_writedata
 	wire   [2:0] mm_clock_crossing_bridge_0_m0_translator_avalon_universal_master_0_burstcount;    // mm_clock_crossing_bridge_0_m0_translator:uav_burstcount -> mm_clock_crossing_bridge_0_m0_agent:av_burstcount
-	wire  [31:0] jtag_uart_0_avalon_jtag_slave_agent_m0_readdata;                                  // jtag_uart_0_avalon_jtag_slave_translator:uav_readdata -> jtag_uart_0_avalon_jtag_slave_agent:m0_readdata
-	wire         jtag_uart_0_avalon_jtag_slave_agent_m0_waitrequest;                               // jtag_uart_0_avalon_jtag_slave_translator:uav_waitrequest -> jtag_uart_0_avalon_jtag_slave_agent:m0_waitrequest
-	wire         jtag_uart_0_avalon_jtag_slave_agent_m0_debugaccess;                               // jtag_uart_0_avalon_jtag_slave_agent:m0_debugaccess -> jtag_uart_0_avalon_jtag_slave_translator:uav_debugaccess
-	wire  [11:0] jtag_uart_0_avalon_jtag_slave_agent_m0_address;                                   // jtag_uart_0_avalon_jtag_slave_agent:m0_address -> jtag_uart_0_avalon_jtag_slave_translator:uav_address
-	wire   [3:0] jtag_uart_0_avalon_jtag_slave_agent_m0_byteenable;                                // jtag_uart_0_avalon_jtag_slave_agent:m0_byteenable -> jtag_uart_0_avalon_jtag_slave_translator:uav_byteenable
-	wire         jtag_uart_0_avalon_jtag_slave_agent_m0_read;                                      // jtag_uart_0_avalon_jtag_slave_agent:m0_read -> jtag_uart_0_avalon_jtag_slave_translator:uav_read
-	wire         jtag_uart_0_avalon_jtag_slave_agent_m0_readdatavalid;                             // jtag_uart_0_avalon_jtag_slave_translator:uav_readdatavalid -> jtag_uart_0_avalon_jtag_slave_agent:m0_readdatavalid
-	wire         jtag_uart_0_avalon_jtag_slave_agent_m0_lock;                                      // jtag_uart_0_avalon_jtag_slave_agent:m0_lock -> jtag_uart_0_avalon_jtag_slave_translator:uav_lock
-	wire  [31:0] jtag_uart_0_avalon_jtag_slave_agent_m0_writedata;                                 // jtag_uart_0_avalon_jtag_slave_agent:m0_writedata -> jtag_uart_0_avalon_jtag_slave_translator:uav_writedata
-	wire         jtag_uart_0_avalon_jtag_slave_agent_m0_write;                                     // jtag_uart_0_avalon_jtag_slave_agent:m0_write -> jtag_uart_0_avalon_jtag_slave_translator:uav_write
-	wire   [2:0] jtag_uart_0_avalon_jtag_slave_agent_m0_burstcount;                                // jtag_uart_0_avalon_jtag_slave_agent:m0_burstcount -> jtag_uart_0_avalon_jtag_slave_translator:uav_burstcount
-	wire         jtag_uart_0_avalon_jtag_slave_agent_rf_source_valid;                              // jtag_uart_0_avalon_jtag_slave_agent:rf_source_valid -> jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo:in_valid
-	wire  [86:0] jtag_uart_0_avalon_jtag_slave_agent_rf_source_data;                               // jtag_uart_0_avalon_jtag_slave_agent:rf_source_data -> jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo:in_data
-	wire         jtag_uart_0_avalon_jtag_slave_agent_rf_source_ready;                              // jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo:in_ready -> jtag_uart_0_avalon_jtag_slave_agent:rf_source_ready
-	wire         jtag_uart_0_avalon_jtag_slave_agent_rf_source_startofpacket;                      // jtag_uart_0_avalon_jtag_slave_agent:rf_source_startofpacket -> jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo:in_startofpacket
-	wire         jtag_uart_0_avalon_jtag_slave_agent_rf_source_endofpacket;                        // jtag_uart_0_avalon_jtag_slave_agent:rf_source_endofpacket -> jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo:in_endofpacket
-	wire         jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo_out_valid;                           // jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo:out_valid -> jtag_uart_0_avalon_jtag_slave_agent:rf_sink_valid
-	wire  [86:0] jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo_out_data;                            // jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo:out_data -> jtag_uart_0_avalon_jtag_slave_agent:rf_sink_data
-	wire         jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo_out_ready;                           // jtag_uart_0_avalon_jtag_slave_agent:rf_sink_ready -> jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo:out_ready
-	wire         jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo_out_startofpacket;                   // jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo:out_startofpacket -> jtag_uart_0_avalon_jtag_slave_agent:rf_sink_startofpacket
-	wire         jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo_out_endofpacket;                     // jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo:out_endofpacket -> jtag_uart_0_avalon_jtag_slave_agent:rf_sink_endofpacket
-	wire         cmd_mux_src_valid;                                                                // cmd_mux:src_valid -> jtag_uart_0_avalon_jtag_slave_agent:cp_valid
-	wire  [85:0] cmd_mux_src_data;                                                                 // cmd_mux:src_data -> jtag_uart_0_avalon_jtag_slave_agent:cp_data
-	wire         cmd_mux_src_ready;                                                                // jtag_uart_0_avalon_jtag_slave_agent:cp_ready -> cmd_mux:src_ready
-	wire   [4:0] cmd_mux_src_channel;                                                              // cmd_mux:src_channel -> jtag_uart_0_avalon_jtag_slave_agent:cp_channel
-	wire         cmd_mux_src_startofpacket;                                                        // cmd_mux:src_startofpacket -> jtag_uart_0_avalon_jtag_slave_agent:cp_startofpacket
-	wire         cmd_mux_src_endofpacket;                                                          // cmd_mux:src_endofpacket -> jtag_uart_0_avalon_jtag_slave_agent:cp_endofpacket
+	wire  [31:0] jtag_uart_avalon_jtag_slave_agent_m0_readdata;                                    // jtag_uart_avalon_jtag_slave_translator:uav_readdata -> jtag_uart_avalon_jtag_slave_agent:m0_readdata
+	wire         jtag_uart_avalon_jtag_slave_agent_m0_waitrequest;                                 // jtag_uart_avalon_jtag_slave_translator:uav_waitrequest -> jtag_uart_avalon_jtag_slave_agent:m0_waitrequest
+	wire         jtag_uart_avalon_jtag_slave_agent_m0_debugaccess;                                 // jtag_uart_avalon_jtag_slave_agent:m0_debugaccess -> jtag_uart_avalon_jtag_slave_translator:uav_debugaccess
+	wire  [11:0] jtag_uart_avalon_jtag_slave_agent_m0_address;                                     // jtag_uart_avalon_jtag_slave_agent:m0_address -> jtag_uart_avalon_jtag_slave_translator:uav_address
+	wire   [3:0] jtag_uart_avalon_jtag_slave_agent_m0_byteenable;                                  // jtag_uart_avalon_jtag_slave_agent:m0_byteenable -> jtag_uart_avalon_jtag_slave_translator:uav_byteenable
+	wire         jtag_uart_avalon_jtag_slave_agent_m0_read;                                        // jtag_uart_avalon_jtag_slave_agent:m0_read -> jtag_uart_avalon_jtag_slave_translator:uav_read
+	wire         jtag_uart_avalon_jtag_slave_agent_m0_readdatavalid;                               // jtag_uart_avalon_jtag_slave_translator:uav_readdatavalid -> jtag_uart_avalon_jtag_slave_agent:m0_readdatavalid
+	wire         jtag_uart_avalon_jtag_slave_agent_m0_lock;                                        // jtag_uart_avalon_jtag_slave_agent:m0_lock -> jtag_uart_avalon_jtag_slave_translator:uav_lock
+	wire  [31:0] jtag_uart_avalon_jtag_slave_agent_m0_writedata;                                   // jtag_uart_avalon_jtag_slave_agent:m0_writedata -> jtag_uart_avalon_jtag_slave_translator:uav_writedata
+	wire         jtag_uart_avalon_jtag_slave_agent_m0_write;                                       // jtag_uart_avalon_jtag_slave_agent:m0_write -> jtag_uart_avalon_jtag_slave_translator:uav_write
+	wire   [2:0] jtag_uart_avalon_jtag_slave_agent_m0_burstcount;                                  // jtag_uart_avalon_jtag_slave_agent:m0_burstcount -> jtag_uart_avalon_jtag_slave_translator:uav_burstcount
+	wire         jtag_uart_avalon_jtag_slave_agent_rf_source_valid;                                // jtag_uart_avalon_jtag_slave_agent:rf_source_valid -> jtag_uart_avalon_jtag_slave_agent_rsp_fifo:in_valid
+	wire  [86:0] jtag_uart_avalon_jtag_slave_agent_rf_source_data;                                 // jtag_uart_avalon_jtag_slave_agent:rf_source_data -> jtag_uart_avalon_jtag_slave_agent_rsp_fifo:in_data
+	wire         jtag_uart_avalon_jtag_slave_agent_rf_source_ready;                                // jtag_uart_avalon_jtag_slave_agent_rsp_fifo:in_ready -> jtag_uart_avalon_jtag_slave_agent:rf_source_ready
+	wire         jtag_uart_avalon_jtag_slave_agent_rf_source_startofpacket;                        // jtag_uart_avalon_jtag_slave_agent:rf_source_startofpacket -> jtag_uart_avalon_jtag_slave_agent_rsp_fifo:in_startofpacket
+	wire         jtag_uart_avalon_jtag_slave_agent_rf_source_endofpacket;                          // jtag_uart_avalon_jtag_slave_agent:rf_source_endofpacket -> jtag_uart_avalon_jtag_slave_agent_rsp_fifo:in_endofpacket
+	wire         jtag_uart_avalon_jtag_slave_agent_rsp_fifo_out_valid;                             // jtag_uart_avalon_jtag_slave_agent_rsp_fifo:out_valid -> jtag_uart_avalon_jtag_slave_agent:rf_sink_valid
+	wire  [86:0] jtag_uart_avalon_jtag_slave_agent_rsp_fifo_out_data;                              // jtag_uart_avalon_jtag_slave_agent_rsp_fifo:out_data -> jtag_uart_avalon_jtag_slave_agent:rf_sink_data
+	wire         jtag_uart_avalon_jtag_slave_agent_rsp_fifo_out_ready;                             // jtag_uart_avalon_jtag_slave_agent:rf_sink_ready -> jtag_uart_avalon_jtag_slave_agent_rsp_fifo:out_ready
+	wire         jtag_uart_avalon_jtag_slave_agent_rsp_fifo_out_startofpacket;                     // jtag_uart_avalon_jtag_slave_agent_rsp_fifo:out_startofpacket -> jtag_uart_avalon_jtag_slave_agent:rf_sink_startofpacket
+	wire         jtag_uart_avalon_jtag_slave_agent_rsp_fifo_out_endofpacket;                       // jtag_uart_avalon_jtag_slave_agent_rsp_fifo:out_endofpacket -> jtag_uart_avalon_jtag_slave_agent:rf_sink_endofpacket
+	wire         cmd_mux_src_valid;                                                                // cmd_mux:src_valid -> jtag_uart_avalon_jtag_slave_agent:cp_valid
+	wire  [85:0] cmd_mux_src_data;                                                                 // cmd_mux:src_data -> jtag_uart_avalon_jtag_slave_agent:cp_data
+	wire         cmd_mux_src_ready;                                                                // jtag_uart_avalon_jtag_slave_agent:cp_ready -> cmd_mux:src_ready
+	wire   [4:0] cmd_mux_src_channel;                                                              // cmd_mux:src_channel -> jtag_uart_avalon_jtag_slave_agent:cp_channel
+	wire         cmd_mux_src_startofpacket;                                                        // cmd_mux:src_startofpacket -> jtag_uart_avalon_jtag_slave_agent:cp_startofpacket
+	wire         cmd_mux_src_endofpacket;                                                          // cmd_mux:src_endofpacket -> jtag_uart_avalon_jtag_slave_agent:cp_endofpacket
 	wire  [31:0] sysid_control_slave_agent_m0_readdata;                                            // sysid_control_slave_translator:uav_readdata -> sysid_control_slave_agent:m0_readdata
 	wire         sysid_control_slave_agent_m0_waitrequest;                                         // sysid_control_slave_translator:uav_waitrequest -> sysid_control_slave_agent:m0_waitrequest
 	wire         sysid_control_slave_agent_m0_debugaccess;                                         // sysid_control_slave_agent:m0_debugaccess -> sysid_control_slave_translator:uav_debugaccess
@@ -196,11 +196,11 @@ module Embed_mm_interconnect_1 (
 	wire         mm_clock_crossing_bridge_0_m0_agent_cp_ready;                                     // router:sink_ready -> mm_clock_crossing_bridge_0_m0_agent:cp_ready
 	wire         mm_clock_crossing_bridge_0_m0_agent_cp_startofpacket;                             // mm_clock_crossing_bridge_0_m0_agent:cp_startofpacket -> router:sink_startofpacket
 	wire         mm_clock_crossing_bridge_0_m0_agent_cp_endofpacket;                               // mm_clock_crossing_bridge_0_m0_agent:cp_endofpacket -> router:sink_endofpacket
-	wire         jtag_uart_0_avalon_jtag_slave_agent_rp_valid;                                     // jtag_uart_0_avalon_jtag_slave_agent:rp_valid -> router_001:sink_valid
-	wire  [85:0] jtag_uart_0_avalon_jtag_slave_agent_rp_data;                                      // jtag_uart_0_avalon_jtag_slave_agent:rp_data -> router_001:sink_data
-	wire         jtag_uart_0_avalon_jtag_slave_agent_rp_ready;                                     // router_001:sink_ready -> jtag_uart_0_avalon_jtag_slave_agent:rp_ready
-	wire         jtag_uart_0_avalon_jtag_slave_agent_rp_startofpacket;                             // jtag_uart_0_avalon_jtag_slave_agent:rp_startofpacket -> router_001:sink_startofpacket
-	wire         jtag_uart_0_avalon_jtag_slave_agent_rp_endofpacket;                               // jtag_uart_0_avalon_jtag_slave_agent:rp_endofpacket -> router_001:sink_endofpacket
+	wire         jtag_uart_avalon_jtag_slave_agent_rp_valid;                                       // jtag_uart_avalon_jtag_slave_agent:rp_valid -> router_001:sink_valid
+	wire  [85:0] jtag_uart_avalon_jtag_slave_agent_rp_data;                                        // jtag_uart_avalon_jtag_slave_agent:rp_data -> router_001:sink_data
+	wire         jtag_uart_avalon_jtag_slave_agent_rp_ready;                                       // router_001:sink_ready -> jtag_uart_avalon_jtag_slave_agent:rp_ready
+	wire         jtag_uart_avalon_jtag_slave_agent_rp_startofpacket;                               // jtag_uart_avalon_jtag_slave_agent:rp_startofpacket -> router_001:sink_startofpacket
+	wire         jtag_uart_avalon_jtag_slave_agent_rp_endofpacket;                                 // jtag_uart_avalon_jtag_slave_agent:rp_endofpacket -> router_001:sink_endofpacket
 	wire         router_001_src_valid;                                                             // router_001:src_valid -> rsp_demux:sink_valid
 	wire  [85:0] router_001_src_data;                                                              // router_001:src_data -> rsp_demux:sink_data
 	wire         router_001_src_ready;                                                             // rsp_demux:sink_ready -> router_001:src_ready
@@ -335,13 +335,13 @@ module Embed_mm_interconnect_1 (
 	wire         rsp_demux_004_src0_startofpacket;                                                 // rsp_demux_004:src0_startofpacket -> rsp_mux:sink4_startofpacket
 	wire         rsp_demux_004_src0_endofpacket;                                                   // rsp_demux_004:src0_endofpacket -> rsp_mux:sink4_endofpacket
 	wire   [4:0] mm_clock_crossing_bridge_0_m0_limiter_cmd_valid_data;                             // mm_clock_crossing_bridge_0_m0_limiter:cmd_src_valid -> cmd_demux:sink_valid
-	wire         jtag_uart_0_avalon_jtag_slave_agent_rdata_fifo_src_valid;                         // jtag_uart_0_avalon_jtag_slave_agent:rdata_fifo_src_valid -> avalon_st_adapter:in_0_valid
-	wire  [33:0] jtag_uart_0_avalon_jtag_slave_agent_rdata_fifo_src_data;                          // jtag_uart_0_avalon_jtag_slave_agent:rdata_fifo_src_data -> avalon_st_adapter:in_0_data
-	wire         jtag_uart_0_avalon_jtag_slave_agent_rdata_fifo_src_ready;                         // avalon_st_adapter:in_0_ready -> jtag_uart_0_avalon_jtag_slave_agent:rdata_fifo_src_ready
-	wire         avalon_st_adapter_out_0_valid;                                                    // avalon_st_adapter:out_0_valid -> jtag_uart_0_avalon_jtag_slave_agent:rdata_fifo_sink_valid
-	wire  [33:0] avalon_st_adapter_out_0_data;                                                     // avalon_st_adapter:out_0_data -> jtag_uart_0_avalon_jtag_slave_agent:rdata_fifo_sink_data
-	wire         avalon_st_adapter_out_0_ready;                                                    // jtag_uart_0_avalon_jtag_slave_agent:rdata_fifo_sink_ready -> avalon_st_adapter:out_0_ready
-	wire   [0:0] avalon_st_adapter_out_0_error;                                                    // avalon_st_adapter:out_0_error -> jtag_uart_0_avalon_jtag_slave_agent:rdata_fifo_sink_error
+	wire         jtag_uart_avalon_jtag_slave_agent_rdata_fifo_src_valid;                           // jtag_uart_avalon_jtag_slave_agent:rdata_fifo_src_valid -> avalon_st_adapter:in_0_valid
+	wire  [33:0] jtag_uart_avalon_jtag_slave_agent_rdata_fifo_src_data;                            // jtag_uart_avalon_jtag_slave_agent:rdata_fifo_src_data -> avalon_st_adapter:in_0_data
+	wire         jtag_uart_avalon_jtag_slave_agent_rdata_fifo_src_ready;                           // avalon_st_adapter:in_0_ready -> jtag_uart_avalon_jtag_slave_agent:rdata_fifo_src_ready
+	wire         avalon_st_adapter_out_0_valid;                                                    // avalon_st_adapter:out_0_valid -> jtag_uart_avalon_jtag_slave_agent:rdata_fifo_sink_valid
+	wire  [33:0] avalon_st_adapter_out_0_data;                                                     // avalon_st_adapter:out_0_data -> jtag_uart_avalon_jtag_slave_agent:rdata_fifo_sink_data
+	wire         avalon_st_adapter_out_0_ready;                                                    // jtag_uart_avalon_jtag_slave_agent:rdata_fifo_sink_ready -> avalon_st_adapter:out_0_ready
+	wire   [0:0] avalon_st_adapter_out_0_error;                                                    // avalon_st_adapter:out_0_error -> jtag_uart_avalon_jtag_slave_agent:rdata_fifo_sink_error
 	wire         sysid_control_slave_agent_rdata_fifo_src_valid;                                   // sysid_control_slave_agent:rdata_fifo_src_valid -> avalon_st_adapter_001:in_0_valid
 	wire  [33:0] sysid_control_slave_agent_rdata_fifo_src_data;                                    // sysid_control_slave_agent:rdata_fifo_src_data -> avalon_st_adapter_001:in_0_data
 	wire         sysid_control_slave_agent_rdata_fifo_src_ready;                                   // avalon_st_adapter_001:in_0_ready -> sysid_control_slave_agent:rdata_fifo_src_ready
@@ -457,27 +457,27 @@ module Embed_mm_interconnect_1 (
 		.AV_WRITE_WAIT_CYCLES           (0),
 		.AV_SETUP_WAIT_CYCLES           (0),
 		.AV_DATA_HOLD_CYCLES            (0)
-	) jtag_uart_0_avalon_jtag_slave_translator (
+	) jtag_uart_avalon_jtag_slave_translator (
 		.clk                    (altpll_0_c2_clk),                                                 //                      clk.clk
 		.reset                  (mm_clock_crossing_bridge_0_m0_reset_reset_bridge_in_reset_reset), //                    reset.reset
-		.uav_address            (jtag_uart_0_avalon_jtag_slave_agent_m0_address),                  // avalon_universal_slave_0.address
-		.uav_burstcount         (jtag_uart_0_avalon_jtag_slave_agent_m0_burstcount),               //                         .burstcount
-		.uav_read               (jtag_uart_0_avalon_jtag_slave_agent_m0_read),                     //                         .read
-		.uav_write              (jtag_uart_0_avalon_jtag_slave_agent_m0_write),                    //                         .write
-		.uav_waitrequest        (jtag_uart_0_avalon_jtag_slave_agent_m0_waitrequest),              //                         .waitrequest
-		.uav_readdatavalid      (jtag_uart_0_avalon_jtag_slave_agent_m0_readdatavalid),            //                         .readdatavalid
-		.uav_byteenable         (jtag_uart_0_avalon_jtag_slave_agent_m0_byteenable),               //                         .byteenable
-		.uav_readdata           (jtag_uart_0_avalon_jtag_slave_agent_m0_readdata),                 //                         .readdata
-		.uav_writedata          (jtag_uart_0_avalon_jtag_slave_agent_m0_writedata),                //                         .writedata
-		.uav_lock               (jtag_uart_0_avalon_jtag_slave_agent_m0_lock),                     //                         .lock
-		.uav_debugaccess        (jtag_uart_0_avalon_jtag_slave_agent_m0_debugaccess),              //                         .debugaccess
-		.av_address             (jtag_uart_0_avalon_jtag_slave_address),                           //      avalon_anti_slave_0.address
-		.av_write               (jtag_uart_0_avalon_jtag_slave_write),                             //                         .write
-		.av_read                (jtag_uart_0_avalon_jtag_slave_read),                              //                         .read
-		.av_readdata            (jtag_uart_0_avalon_jtag_slave_readdata),                          //                         .readdata
-		.av_writedata           (jtag_uart_0_avalon_jtag_slave_writedata),                         //                         .writedata
-		.av_waitrequest         (jtag_uart_0_avalon_jtag_slave_waitrequest),                       //                         .waitrequest
-		.av_chipselect          (jtag_uart_0_avalon_jtag_slave_chipselect),                        //                         .chipselect
+		.uav_address            (jtag_uart_avalon_jtag_slave_agent_m0_address),                    // avalon_universal_slave_0.address
+		.uav_burstcount         (jtag_uart_avalon_jtag_slave_agent_m0_burstcount),                 //                         .burstcount
+		.uav_read               (jtag_uart_avalon_jtag_slave_agent_m0_read),                       //                         .read
+		.uav_write              (jtag_uart_avalon_jtag_slave_agent_m0_write),                      //                         .write
+		.uav_waitrequest        (jtag_uart_avalon_jtag_slave_agent_m0_waitrequest),                //                         .waitrequest
+		.uav_readdatavalid      (jtag_uart_avalon_jtag_slave_agent_m0_readdatavalid),              //                         .readdatavalid
+		.uav_byteenable         (jtag_uart_avalon_jtag_slave_agent_m0_byteenable),                 //                         .byteenable
+		.uav_readdata           (jtag_uart_avalon_jtag_slave_agent_m0_readdata),                   //                         .readdata
+		.uav_writedata          (jtag_uart_avalon_jtag_slave_agent_m0_writedata),                  //                         .writedata
+		.uav_lock               (jtag_uart_avalon_jtag_slave_agent_m0_lock),                       //                         .lock
+		.uav_debugaccess        (jtag_uart_avalon_jtag_slave_agent_m0_debugaccess),                //                         .debugaccess
+		.av_address             (jtag_uart_avalon_jtag_slave_address),                             //      avalon_anti_slave_0.address
+		.av_write               (jtag_uart_avalon_jtag_slave_write),                               //                         .write
+		.av_read                (jtag_uart_avalon_jtag_slave_read),                                //                         .read
+		.av_readdata            (jtag_uart_avalon_jtag_slave_readdata),                            //                         .readdata
+		.av_writedata           (jtag_uart_avalon_jtag_slave_writedata),                           //                         .writedata
+		.av_waitrequest         (jtag_uart_avalon_jtag_slave_waitrequest),                         //                         .waitrequest
+		.av_chipselect          (jtag_uart_avalon_jtag_slave_chipselect),                          //                         .chipselect
 		.av_begintransfer       (),                                                                //              (terminated)
 		.av_beginbursttransfer  (),                                                                //              (terminated)
 		.av_burstcount          (),                                                                //              (terminated)
@@ -870,48 +870,48 @@ module Embed_mm_interconnect_1 (
 		.USE_READRESPONSE          (0),
 		.USE_WRITERESPONSE         (0),
 		.ECC_ENABLE                (0)
-	) jtag_uart_0_avalon_jtag_slave_agent (
+	) jtag_uart_avalon_jtag_slave_agent (
 		.clk                     (altpll_0_c2_clk),                                                 //             clk.clk
 		.reset                   (mm_clock_crossing_bridge_0_m0_reset_reset_bridge_in_reset_reset), //       clk_reset.reset
-		.m0_address              (jtag_uart_0_avalon_jtag_slave_agent_m0_address),                  //              m0.address
-		.m0_burstcount           (jtag_uart_0_avalon_jtag_slave_agent_m0_burstcount),               //                .burstcount
-		.m0_byteenable           (jtag_uart_0_avalon_jtag_slave_agent_m0_byteenable),               //                .byteenable
-		.m0_debugaccess          (jtag_uart_0_avalon_jtag_slave_agent_m0_debugaccess),              //                .debugaccess
-		.m0_lock                 (jtag_uart_0_avalon_jtag_slave_agent_m0_lock),                     //                .lock
-		.m0_readdata             (jtag_uart_0_avalon_jtag_slave_agent_m0_readdata),                 //                .readdata
-		.m0_readdatavalid        (jtag_uart_0_avalon_jtag_slave_agent_m0_readdatavalid),            //                .readdatavalid
-		.m0_read                 (jtag_uart_0_avalon_jtag_slave_agent_m0_read),                     //                .read
-		.m0_waitrequest          (jtag_uart_0_avalon_jtag_slave_agent_m0_waitrequest),              //                .waitrequest
-		.m0_writedata            (jtag_uart_0_avalon_jtag_slave_agent_m0_writedata),                //                .writedata
-		.m0_write                (jtag_uart_0_avalon_jtag_slave_agent_m0_write),                    //                .write
-		.rp_endofpacket          (jtag_uart_0_avalon_jtag_slave_agent_rp_endofpacket),              //              rp.endofpacket
-		.rp_ready                (jtag_uart_0_avalon_jtag_slave_agent_rp_ready),                    //                .ready
-		.rp_valid                (jtag_uart_0_avalon_jtag_slave_agent_rp_valid),                    //                .valid
-		.rp_data                 (jtag_uart_0_avalon_jtag_slave_agent_rp_data),                     //                .data
-		.rp_startofpacket        (jtag_uart_0_avalon_jtag_slave_agent_rp_startofpacket),            //                .startofpacket
+		.m0_address              (jtag_uart_avalon_jtag_slave_agent_m0_address),                    //              m0.address
+		.m0_burstcount           (jtag_uart_avalon_jtag_slave_agent_m0_burstcount),                 //                .burstcount
+		.m0_byteenable           (jtag_uart_avalon_jtag_slave_agent_m0_byteenable),                 //                .byteenable
+		.m0_debugaccess          (jtag_uart_avalon_jtag_slave_agent_m0_debugaccess),                //                .debugaccess
+		.m0_lock                 (jtag_uart_avalon_jtag_slave_agent_m0_lock),                       //                .lock
+		.m0_readdata             (jtag_uart_avalon_jtag_slave_agent_m0_readdata),                   //                .readdata
+		.m0_readdatavalid        (jtag_uart_avalon_jtag_slave_agent_m0_readdatavalid),              //                .readdatavalid
+		.m0_read                 (jtag_uart_avalon_jtag_slave_agent_m0_read),                       //                .read
+		.m0_waitrequest          (jtag_uart_avalon_jtag_slave_agent_m0_waitrequest),                //                .waitrequest
+		.m0_writedata            (jtag_uart_avalon_jtag_slave_agent_m0_writedata),                  //                .writedata
+		.m0_write                (jtag_uart_avalon_jtag_slave_agent_m0_write),                      //                .write
+		.rp_endofpacket          (jtag_uart_avalon_jtag_slave_agent_rp_endofpacket),                //              rp.endofpacket
+		.rp_ready                (jtag_uart_avalon_jtag_slave_agent_rp_ready),                      //                .ready
+		.rp_valid                (jtag_uart_avalon_jtag_slave_agent_rp_valid),                      //                .valid
+		.rp_data                 (jtag_uart_avalon_jtag_slave_agent_rp_data),                       //                .data
+		.rp_startofpacket        (jtag_uart_avalon_jtag_slave_agent_rp_startofpacket),              //                .startofpacket
 		.cp_ready                (cmd_mux_src_ready),                                               //              cp.ready
 		.cp_valid                (cmd_mux_src_valid),                                               //                .valid
 		.cp_data                 (cmd_mux_src_data),                                                //                .data
 		.cp_startofpacket        (cmd_mux_src_startofpacket),                                       //                .startofpacket
 		.cp_endofpacket          (cmd_mux_src_endofpacket),                                         //                .endofpacket
 		.cp_channel              (cmd_mux_src_channel),                                             //                .channel
-		.rf_sink_ready           (jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo_out_ready),          //         rf_sink.ready
-		.rf_sink_valid           (jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo_out_valid),          //                .valid
-		.rf_sink_startofpacket   (jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo_out_startofpacket),  //                .startofpacket
-		.rf_sink_endofpacket     (jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo_out_endofpacket),    //                .endofpacket
-		.rf_sink_data            (jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo_out_data),           //                .data
-		.rf_source_ready         (jtag_uart_0_avalon_jtag_slave_agent_rf_source_ready),             //       rf_source.ready
-		.rf_source_valid         (jtag_uart_0_avalon_jtag_slave_agent_rf_source_valid),             //                .valid
-		.rf_source_startofpacket (jtag_uart_0_avalon_jtag_slave_agent_rf_source_startofpacket),     //                .startofpacket
-		.rf_source_endofpacket   (jtag_uart_0_avalon_jtag_slave_agent_rf_source_endofpacket),       //                .endofpacket
-		.rf_source_data          (jtag_uart_0_avalon_jtag_slave_agent_rf_source_data),              //                .data
+		.rf_sink_ready           (jtag_uart_avalon_jtag_slave_agent_rsp_fifo_out_ready),            //         rf_sink.ready
+		.rf_sink_valid           (jtag_uart_avalon_jtag_slave_agent_rsp_fifo_out_valid),            //                .valid
+		.rf_sink_startofpacket   (jtag_uart_avalon_jtag_slave_agent_rsp_fifo_out_startofpacket),    //                .startofpacket
+		.rf_sink_endofpacket     (jtag_uart_avalon_jtag_slave_agent_rsp_fifo_out_endofpacket),      //                .endofpacket
+		.rf_sink_data            (jtag_uart_avalon_jtag_slave_agent_rsp_fifo_out_data),             //                .data
+		.rf_source_ready         (jtag_uart_avalon_jtag_slave_agent_rf_source_ready),               //       rf_source.ready
+		.rf_source_valid         (jtag_uart_avalon_jtag_slave_agent_rf_source_valid),               //                .valid
+		.rf_source_startofpacket (jtag_uart_avalon_jtag_slave_agent_rf_source_startofpacket),       //                .startofpacket
+		.rf_source_endofpacket   (jtag_uart_avalon_jtag_slave_agent_rf_source_endofpacket),         //                .endofpacket
+		.rf_source_data          (jtag_uart_avalon_jtag_slave_agent_rf_source_data),                //                .data
 		.rdata_fifo_sink_ready   (avalon_st_adapter_out_0_ready),                                   // rdata_fifo_sink.ready
 		.rdata_fifo_sink_valid   (avalon_st_adapter_out_0_valid),                                   //                .valid
 		.rdata_fifo_sink_data    (avalon_st_adapter_out_0_data),                                    //                .data
 		.rdata_fifo_sink_error   (avalon_st_adapter_out_0_error),                                   //                .error
-		.rdata_fifo_src_ready    (jtag_uart_0_avalon_jtag_slave_agent_rdata_fifo_src_ready),        //  rdata_fifo_src.ready
-		.rdata_fifo_src_valid    (jtag_uart_0_avalon_jtag_slave_agent_rdata_fifo_src_valid),        //                .valid
-		.rdata_fifo_src_data     (jtag_uart_0_avalon_jtag_slave_agent_rdata_fifo_src_data),         //                .data
+		.rdata_fifo_src_ready    (jtag_uart_avalon_jtag_slave_agent_rdata_fifo_src_ready),          //  rdata_fifo_src.ready
+		.rdata_fifo_src_valid    (jtag_uart_avalon_jtag_slave_agent_rdata_fifo_src_valid),          //                .valid
+		.rdata_fifo_src_data     (jtag_uart_avalon_jtag_slave_agent_rdata_fifo_src_data),           //                .data
 		.m0_response             (2'b00),                                                           //     (terminated)
 		.m0_writeresponsevalid   (1'b0)                                                             //     (terminated)
 	);
@@ -929,19 +929,19 @@ module Embed_mm_interconnect_1 (
 		.USE_STORE_FORWARD   (0),
 		.USE_ALMOST_FULL_IF  (0),
 		.USE_ALMOST_EMPTY_IF (0)
-	) jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo (
+	) jtag_uart_avalon_jtag_slave_agent_rsp_fifo (
 		.clk               (altpll_0_c2_clk),                                                 //       clk.clk
 		.reset             (mm_clock_crossing_bridge_0_m0_reset_reset_bridge_in_reset_reset), // clk_reset.reset
-		.in_data           (jtag_uart_0_avalon_jtag_slave_agent_rf_source_data),              //        in.data
-		.in_valid          (jtag_uart_0_avalon_jtag_slave_agent_rf_source_valid),             //          .valid
-		.in_ready          (jtag_uart_0_avalon_jtag_slave_agent_rf_source_ready),             //          .ready
-		.in_startofpacket  (jtag_uart_0_avalon_jtag_slave_agent_rf_source_startofpacket),     //          .startofpacket
-		.in_endofpacket    (jtag_uart_0_avalon_jtag_slave_agent_rf_source_endofpacket),       //          .endofpacket
-		.out_data          (jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo_out_data),           //       out.data
-		.out_valid         (jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo_out_valid),          //          .valid
-		.out_ready         (jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo_out_ready),          //          .ready
-		.out_startofpacket (jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo_out_startofpacket),  //          .startofpacket
-		.out_endofpacket   (jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo_out_endofpacket),    //          .endofpacket
+		.in_data           (jtag_uart_avalon_jtag_slave_agent_rf_source_data),                //        in.data
+		.in_valid          (jtag_uart_avalon_jtag_slave_agent_rf_source_valid),               //          .valid
+		.in_ready          (jtag_uart_avalon_jtag_slave_agent_rf_source_ready),               //          .ready
+		.in_startofpacket  (jtag_uart_avalon_jtag_slave_agent_rf_source_startofpacket),       //          .startofpacket
+		.in_endofpacket    (jtag_uart_avalon_jtag_slave_agent_rf_source_endofpacket),         //          .endofpacket
+		.out_data          (jtag_uart_avalon_jtag_slave_agent_rsp_fifo_out_data),             //       out.data
+		.out_valid         (jtag_uart_avalon_jtag_slave_agent_rsp_fifo_out_valid),            //          .valid
+		.out_ready         (jtag_uart_avalon_jtag_slave_agent_rsp_fifo_out_ready),            //          .ready
+		.out_startofpacket (jtag_uart_avalon_jtag_slave_agent_rsp_fifo_out_startofpacket),    //          .startofpacket
+		.out_endofpacket   (jtag_uart_avalon_jtag_slave_agent_rsp_fifo_out_endofpacket),      //          .endofpacket
 		.csr_address       (2'b00),                                                           // (terminated)
 		.csr_read          (1'b0),                                                            // (terminated)
 		.csr_write         (1'b0),                                                            // (terminated)
@@ -1474,11 +1474,11 @@ module Embed_mm_interconnect_1 (
 	);
 
 	Embed_mm_interconnect_1_router_001 router_001 (
-		.sink_ready         (jtag_uart_0_avalon_jtag_slave_agent_rp_ready),                    //      sink.ready
-		.sink_valid         (jtag_uart_0_avalon_jtag_slave_agent_rp_valid),                    //          .valid
-		.sink_data          (jtag_uart_0_avalon_jtag_slave_agent_rp_data),                     //          .data
-		.sink_startofpacket (jtag_uart_0_avalon_jtag_slave_agent_rp_startofpacket),            //          .startofpacket
-		.sink_endofpacket   (jtag_uart_0_avalon_jtag_slave_agent_rp_endofpacket),              //          .endofpacket
+		.sink_ready         (jtag_uart_avalon_jtag_slave_agent_rp_ready),                      //      sink.ready
+		.sink_valid         (jtag_uart_avalon_jtag_slave_agent_rp_valid),                      //          .valid
+		.sink_data          (jtag_uart_avalon_jtag_slave_agent_rp_data),                       //          .data
+		.sink_startofpacket (jtag_uart_avalon_jtag_slave_agent_rp_startofpacket),              //          .startofpacket
+		.sink_endofpacket   (jtag_uart_avalon_jtag_slave_agent_rp_endofpacket),                //          .endofpacket
 		.clk                (altpll_0_c2_clk),                                                 //       clk.clk
 		.reset              (mm_clock_crossing_bridge_0_m0_reset_reset_bridge_in_reset_reset), // clk_reset.reset
 		.src_ready          (router_001_src_ready),                                            //       src.ready
@@ -1875,9 +1875,9 @@ module Embed_mm_interconnect_1 (
 	) avalon_st_adapter (
 		.in_clk_0_clk   (altpll_0_c2_clk),                                                 // in_clk_0.clk
 		.in_rst_0_reset (mm_clock_crossing_bridge_0_m0_reset_reset_bridge_in_reset_reset), // in_rst_0.reset
-		.in_0_data      (jtag_uart_0_avalon_jtag_slave_agent_rdata_fifo_src_data),         //     in_0.data
-		.in_0_valid     (jtag_uart_0_avalon_jtag_slave_agent_rdata_fifo_src_valid),        //         .valid
-		.in_0_ready     (jtag_uart_0_avalon_jtag_slave_agent_rdata_fifo_src_ready),        //         .ready
+		.in_0_data      (jtag_uart_avalon_jtag_slave_agent_rdata_fifo_src_data),           //     in_0.data
+		.in_0_valid     (jtag_uart_avalon_jtag_slave_agent_rdata_fifo_src_valid),          //         .valid
+		.in_0_ready     (jtag_uart_avalon_jtag_slave_agent_rdata_fifo_src_ready),          //         .ready
 		.out_0_data     (avalon_st_adapter_out_0_data),                                    //    out_0.data
 		.out_0_valid    (avalon_st_adapter_out_0_valid),                                   //         .valid
 		.out_0_ready    (avalon_st_adapter_out_0_ready),                                   //         .ready
